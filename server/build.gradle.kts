@@ -13,6 +13,8 @@ plugins {
     war
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
+    //    todo: to be deleted
+    kotlin("plugin.jpa") version "1.5.31"
 }
 
 group = "net.maestro"
@@ -39,6 +41,11 @@ dependencies {
 
     testCompileOnly("org.projectlombok:lombok:1.18.22")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.22")
+
+    //    todo: to be deleted
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    //    todo: to be deleted
+    runtimeOnly("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {
