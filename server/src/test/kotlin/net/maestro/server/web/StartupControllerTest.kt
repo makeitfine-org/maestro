@@ -21,7 +21,7 @@ import org.springframework.http.HttpStatus
 class StartupControllerTest(@Autowired val restTemplate: TestRestTemplate) {
     @Test
     fun `Assert startup controller`() {
-        val entity = restTemplate.getForEntity<String>("/")
+        val entity = restTemplate.getForEntity<String>("/startup")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
         assertThat(entity.body).isEqualTo("Hi, it's \"Maestro\" project")
     }

@@ -16,5 +16,5 @@ import org.springframework.stereotype.Service
 class NoteServiceImpl(@Autowired val noteRepository: NoteRepository) : NoteService {
     override fun findAll() = noteRepository.findAll()
 
-    override fun save(note: NoteEntity) = noteRepository.save(note)
+    override fun save(entity: NoteEntity) = noteRepository.save(entity)
 }
