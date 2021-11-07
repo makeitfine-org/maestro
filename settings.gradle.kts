@@ -5,4 +5,4 @@
  */
 
 rootProject.name = "maestro"
-include("server")
+include("backend")

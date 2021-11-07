@@ -4,11 +4,11 @@
  * Copyright 2021
  */
 
-package net.maestro.server.data.service.impl
+package net.maestro.backend.data.service.impl
 
-import net.maestro.server.data.model.NoteEntity
-import net.maestro.server.data.repository.NoteRepository
-import net.maestro.server.data.service.NoteService
+import net.maestro.backend.data.model.NoteEntity
+import net.maestro.backend.data.repository.NoteRepository
+import net.maestro.backend.data.service.NoteService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

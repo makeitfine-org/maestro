@@ -4,9 +4,9 @@
  * Copyright 2021
  */
 
-package net.maestro.server.data.service
+package net.maestro.backend.data.service
 
-import net.maestro.server.data.model.NoteEntity
+import net.maestro.backend.data.model.NoteEntity
 
 interface NoteService {
     fun findAll(): List<NoteEntity>

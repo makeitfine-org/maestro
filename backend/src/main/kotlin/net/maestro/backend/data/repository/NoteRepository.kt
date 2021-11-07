@@ -4,9 +4,9 @@
  * Copyright 2021
  */
 
-package net.maestro.server.data.repository
+package net.maestro.backend.data.repository
 
-import net.maestro.server.data.model.NoteEntity
+import net.maestro.backend.data.model.NoteEntity
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

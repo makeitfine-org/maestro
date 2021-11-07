@@ -4,7 +4,7 @@
  * Copyright 2021
  */
 
-package net.maestro.server
+package net.maestro.backend
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

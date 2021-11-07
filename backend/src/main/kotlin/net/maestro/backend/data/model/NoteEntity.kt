@@ -4,7 +4,7 @@
  * Copyright 2021
  */
 
-package net.maestro.server.data.model
+package net.maestro.backend.data.model
 
 import lombok.NoArgsConstructor
 import javax.persistence.Entity

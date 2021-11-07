@@ -1,4 +1,4 @@
-package net.maestro.server.web
+package net.maestro.backend.web
 
 import lombok.extern.slf4j.Slf4j
 import org.springframework.web.bind.annotation.GetMapping

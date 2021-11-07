@@ -4,7 +4,7 @@
  * Copyright 2021
  */
 
-package net.maestro.server.web
+package net.maestro.backend.web
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
