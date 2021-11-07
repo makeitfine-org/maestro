@@ -9,17 +9,15 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.5.6"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    id("com.github.node-gradle.node") version "3.0.1"
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm")
+    id("io.spring.dependency-management")
     kotlin("plugin.spring") version "1.5.31"
+    id("org.springframework.boot") version "2.5.6"
+    id("com.github.node-gradle.node") version "3.0.1"
     //    todo: to be deleted
     kotlin("plugin.jpa") version "1.5.31"
 }
 
-group = "net.maestro"
-version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_15
 
 repositories {
