@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class StartupController {
 
-    @GetMapping("/")
+    @GetMapping("/startup")
     fun index() = "Hi, it's \"Maestro\" project"
 }

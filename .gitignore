@@ -70,3 +70,8 @@ out/
 ### VS Code ###
 .vscode/
 
+# NODE
+node_modules/
+
+# Output
+*/src/main/resources/static/dist/

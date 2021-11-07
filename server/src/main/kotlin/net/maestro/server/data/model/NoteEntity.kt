@@ -20,4 +20,6 @@ data class NoteEntity(
     var id: Long?,
     var title: String?,
 //    private var note: String?
-)
+) {
+    constructor(title: String?) : this(0L, title)
+}

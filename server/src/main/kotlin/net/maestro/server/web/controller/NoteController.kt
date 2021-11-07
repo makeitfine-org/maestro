@@ -23,5 +23,5 @@ class NoteController(@Autowired val noteService: NoteService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestParam title: String) = noteService.save(NoteEntity(0L, title))
+    fun create(@RequestParam title: String) = noteService.save(NoteEntity(title))
 }
