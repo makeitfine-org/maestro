@@ -12,16 +12,3 @@ repositories {
 node {
     version.set("14.15.5")
 }
-
-val buildReactApp = tasks.register<NodeTask>("buildReactApp") {
-    dependsOn(tasks.npmInstall)
-
-    script.set(project.file("node_modules/webpack/bin/webpack.js"))
-    args.set(
-        listOf(
-            "--mode", "development",
-            "--entry", "./src/main/webapp/javascript/Main.jsx",
-            "-o", "./src/main/resources/static/dist"
-        )
-    )
-}
