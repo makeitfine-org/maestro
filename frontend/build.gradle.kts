@@ -1,5 +1,3 @@
-import com.github.gradle.node.task.NodeTask
-
 plugins {
     id("com.github.node-gradle.node") version "3.0.1"
 }

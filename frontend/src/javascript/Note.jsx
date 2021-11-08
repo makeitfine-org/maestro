@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+import React, {Component} from "react";
 import NoteList from './NoteList';
-import '../css/Main.css';
+import '../css/Note.css';
 
-class Main extends Component {
+class Note extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -63,7 +62,4 @@ class Main extends Component {
     }
 }
 
-ReactDOM.render(
-    <Main />,
-    document.getElementById('react-mountpoint')
-);
+export default Note;

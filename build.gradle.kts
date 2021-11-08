@@ -19,3 +19,17 @@ allprojects {
         mavenCentral()
     }
 }
+
+tasks.register<Exec>("all") {
+    description = "Execute build on modules"
+    println(description)
+
+    workingDir(".")
+
+    commandLine(
+        "gradle",
+        ":backend:clean", "--build-cache",
+        ":backend:build", "--build-cache",
+        ":frontend:npmInstall", "--build-cache"
+    )
+}
