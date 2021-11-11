@@ -16,6 +16,8 @@ plugins {
     kotlin("plugin.jpa") version "1.5.31"
 }
 
+val restAssuredVersion = "4.4.0"
+
 java.sourceCompatibility = JavaVersion.VERSION_15
 
 repositories {
@@ -42,6 +44,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     //    todo: to be deleted
     runtimeOnly("com.h2database:h2")
+
+    testImplementation("io.rest-assured:kotlin-extensions:${restAssuredVersion}")
 }
 
 tasks.withType<KotlinCompile> {
