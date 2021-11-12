@@ -33,3 +33,37 @@ tasks.register<Exec>("all") {
         ":frontend:npmInstall", "--build-cache"
     )
 }
+
+val githookFiles: Array<String> = arrayOf("commit-msg", "pre-push")
+val githooks = "${rootProject.rootDir}/.git/hooks"
+
+tasks.register<Copy>("installGitHooks") {
+    description = "copy git hooks to .git/hook folder"
+    println(description)
+    from(
+        fileTree("${rootProject.rootDir}/gradle/githooks/")
+            .matching {
+                include(*githookFiles)
+            })
+    into("$githooks")
+
+//    dependsOn("removeOldGitHooks")
+    finalizedBy("makeGitHookFilesExecutable")
+}
+
+tasks.register<Delete>("removeOldGitHooks") {
+    description = "delete old hooks from .git/hook folder"
+    println(description)
+    delete(fileTree("$githooks").matching {
+        include(*githookFiles)
+    })
+}
+
+tasks.register<Exec>("makeGitHookFilesExecutable") {
+    description = "make git hooks executable in .git/hook folder"
+    println(description)
+
+    workingDir("$githooks")
+
+    commandLine("chmod", "+x", *githookFiles)
+}
