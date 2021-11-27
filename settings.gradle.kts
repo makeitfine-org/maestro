@@ -12,3 +12,4 @@ pluginManagement {
 rootProject.name = "maestro"
 include("backend")
 include("frontend")
+include("mid")
