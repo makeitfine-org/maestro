@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/** {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+body {
+    background: azure;
+    color: #008;
+    font: normal 16px 'Roboto', sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+}
+
+a:visited {
+    color: grey;
+}
+
+h1 {
+    color: rgb(255, 127, 255);
+}
+
+.avatar {
+    width: 30%;
+    height: 30%;
+    border-radius: 15px;
+    box-shadow: 4px 4px 14px #000025;
+    margin-top: 15px;
+}
+
+.info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    margin-left: 35px;
+}
+
+.info p {
+    color: #0052ff;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+    /*letter-spacing: 3px;*/
+    word-spacing: 3px;
+}
+
+.container {
+    padding-top: 5px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.bg-yellow {
+    background: #fff9dc;
+}
+
+.bg-green {
+    background: #e5ffe7;
+}
+
+.bg-red {
+    background: #ffe5e5;
+}
+
+.card {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.card h2 {
+    margin-bottom: 7px;
+}
+
+.list {
+    padding: 0px 25px;
+    list-style: none;
+}
+
+.list li {
+    color: #86898f;
+    margin-bottom: 5px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding-bottom: 5px;
+}
+
+.table td:nth-child(2), .table td:nth-child(3) {
+    color: grey;
+}
+
+.courses-list {
+    list-style: circle;
+    padding: 5px 25px;
+}
+
+.courses-list li {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact h2 {
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: grey;
+}
+
+.form-group textarea,
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    /*background: #ffffe1;*/
+    background: transparent;
+    border-bottom: 1px solid #ff8000;
+    padding: 5px 5px;
+    outline: none;
+    font-family: inherit;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.row > .form-group {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.row > .form-group:last-child {
+    margin-right: 0px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    background: saddlebrown;
+    color: white;
+    font-family: inherit;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 2px solid blue;
+    opacity: 0.75;
+}
+
+.pos {
+    position: relative;
+    border: 5px solid black;
+    margin: 20px;
+    /*padding: 15px;*/
+    height: 150px;
+}
+
+@media(max-width: 500px) {
+    .info{
+        display: block;
+    }
+}
+
+.box {
+    background: red;
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+/*.social {*/
+/*    background: lightgreen;*/
+/*    padding: 10px 15px;*/
+/*    border: 5px solid red;*/
+/*    margin: 15px;*/
+/*    border-bottom-style: double;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.box-model > div {*/
+/*    background: black;*/
+/*    height: 200px;*/
+/*    width: 25%;*/
+/*    float: left;*/
+/*    border-radius: 5px;*/
+/*    border: 3px solid red;*/
+/*    box-sizing: border-box;*/
+/*}*/

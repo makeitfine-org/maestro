@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+    <style>
+        th, td {
+            border: dashed green
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="any" style="color: black;">Ready!</h1>
+
+<ul style="list-style-type: square;">
+    <li>abc</li>
+    <li><em>abc2</em></li>
+    <li><strong>abc3</strong></li>
+    <li>
+        <del>abc4</del>
+    </li>
+</ul>
+<ol>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ol>
+<table style="border: 1px solid black;">
+    <tr>
+        <td>hello</td>
+        <td>Tim</td>
+    </tr>
+    <tr>
+        <td>buy</td>
+        <td>One</td>
+    </tr>
+</table>
+<script>
+    const elem = document.querySelector("#any")
+    // elem.textContent = 'Go!'
+    setInterval(() => elem.style.color = "yellow", 2000)
+    setTimeout(
+        () => setInterval(() => elem.style.color = "green", 4000),
+        1000
+    )
+    setTimeout(
+        () => setInterval(() => elem.style.color = "red", 4000),
+        3000
+    )
+</script>
+</body>
+</html>
