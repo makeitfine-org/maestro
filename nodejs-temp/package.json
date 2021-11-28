@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-temp",
+  "version": "1.0.0",
+  "description": "Play with Node JS (learning)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "npm",
+    "js",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "kores",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
