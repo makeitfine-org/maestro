@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="theme.css">
+    <title>Play with Vue.js</title>
+</head>
+<body>
+<h1>Vue.js</h1>
+
+<!--<div id="app" class="container pt-5">-->
+<!--    <div class="card center">-->
+
+<div id="app" class="container">
+    <div class="card">
+        <!--        <h1>{{ counterTitle }} : {{ counter }}</h1>-->
+        <!--        <div>-->
+        <!--            <button class="btn primary" v-on:click="counter++">Add</button>-->
+        <!--            <button class="btn danger" v-on:click="counter&#45;&#45;">Substract</button>-->
+        <!--        </div>-->
+        <!--        <h1 :style="{-->
+        <!--            color: noteInputValue.length < 15 ? 'green' : 'red',-->
+        <!--            fontWeight: noteInputValue.length < 15 ? 'normal' : 'bold',-->
+        <!--            textDecoration: titleH1TextDecoration()-->
+        <!--        }">-->
+        <!--        <h1 :style="titleH1Style">-->
+        <h1 :style="titleH1Style()">
+            {{ noteTitle }}
+        </h1>
+        <div class="form-control">
+            <input type="text"
+                   :placeholder="notePlaceholder"
+                   :value="noteInputValue"
+                   @input="inputChangeHandler"
+                   @keyup.enter="addNewNote"
+            />
+        </div>
+        <button class="btn" @click="addNewNote">Add</button>
+        <hr>
+        <ul class="list" v-if="notes.length !== 0">
+            <li class="list-time" v-for="(note, idx) in notes">
+                <div class="li-div-norm">
+                    <div>
+                        <!--                        <span :class="note.length < 15 ? 'primary' : 'bold'">-->
+                        <!--                        <span :class="{-->
+                        <!--                            'primary': true,-->
+                        <!--                            'bold': note.length >=  15-->
+                        <!--                        }">-->
+                        <span :class="[
+                            'primary',
+                            {'bold': note.length >=  15}
+                        ]">
+                        {{ toUpperCase(note) }}
+                        </span>
+                    </div>
+                    <div>
+                        <button class="btn danger" @click="removeNote(idx)">Remove</button>
+                    </div>
+                </div>
+            </li>
+            <hr>
+            <li>
+                <strong>Notes number: {{ notes.length }}</strong>
+                | Double number: {{ doubleNumberComputed }}
+            </li>
+        </ul>
+        <div v-else>There is no notes</div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+</body>
+</html>
