@@ -10,64 +10,41 @@
 </head>
 <body>
 <h1>Vue.js</h1>
-
-<!--<div id="app" class="container pt-5">-->
-<!--    <div class="card center">-->
-
-<div id="app" class="container">
-    <div class="card">
-        <!--        <h1>{{ counterTitle }} : {{ counter }}</h1>-->
-        <!--        <div>-->
-        <!--            <button class="btn primary" v-on:click="counter++">Add</button>-->
-        <!--            <button class="btn danger" v-on:click="counter&#45;&#45;">Substract</button>-->
-        <!--        </div>-->
-        <!--        <h1 :style="{-->
-        <!--            color: noteInputValue.length < 15 ? 'green' : 'red',-->
-        <!--            fontWeight: noteInputValue.length < 15 ? 'normal' : 'bold',-->
-        <!--            textDecoration: titleH1TextDecoration()-->
-        <!--        }">-->
-        <!--        <h1 :style="titleH1Style">-->
-        <h1 :style="titleH1Style()">
-            {{ noteTitle }}
-        </h1>
+<div class="container pt-5" id="app" v-cloak>
+    <div class="card center">
+        <div v-html="customHtml"></div>
+        <!--        <h2 v-text="title"></h2>-->
+        <!--        <h2 v-once>{{ title }}</h2>-->
+        <!--        <h2 v-pre>{{ title }}</h2>-->
+        <!--        <button class="btn"-->
+        <!--                @click="title = (title === '-' ? 'Play with Vue.js title' : '-')">change-->
+        <!--        </button>-->
         <div class="form-control">
             <input type="text"
-                   :placeholder="notePlaceholder"
-                   :value="noteInputValue"
-                   @input="inputChangeHandler"
-                   @keyup.enter="addNewNote"
-            />
+                   @keyup.enter.up.down="addItem($event)"
+                   @click.right="addItem($event)"
+                   ref="newInput">
         </div>
-        <button class="btn" @click="addNewNote">Add</button>
-        <hr>
-        <ul class="list" v-if="notes.length !== 0">
-            <li class="list-time" v-for="(note, idx) in notes">
-                <div class="li-div-norm">
-                    <div>
-                        <!--                        <span :class="note.length < 15 ? 'primary' : 'bold'">-->
-                        <!--                        <span :class="{-->
-                        <!--                            'primary': true,-->
-                        <!--                            'bold': note.length >=  15-->
-                        <!--                        }">-->
-                        <span :class="[
-                            'primary',
-                            {'bold': note.length >=  15}
-                        ]">
-                        {{ toUpperCase(note) }}
-                        </span>
-                    </div>
-                    <div>
-                        <button class="btn danger" @click="removeNote(idx)">Remove</button>
-                    </div>
-                </div>
+        <ul class="list">
+            <!--            <li class="list-item" v-for="(item, i) of ['sd', 'd', '2', '0', 'k']">{{ item }} {{ i - 1 }}</li>-->
+            <!--            <li class="list-item" v-for="(value, key) in customObject">-->
+            <!--                <em style="color: darkorange;">{{ key }}:&nbsp;</em> {{ value }}-->
+            <!--            </li>-->
+            <li class="list-item"
+                v-if="items.length"
+                v-for="(item, i) in items"
+                @click="remove(i), removeLog(item)"
+                :key="item"
+            >
+                <strong>{{ item }}</strong>
+                &nbsp;
+                <input type="text" @click.stop>
             </li>
-            <hr>
-            <li>
-                <strong>Notes number: {{ notes.length }}</strong>
-                | Double number: {{ doubleNumberComputed }}
+            <li class="list-item"
+                v-show="items.length === 0">
+                No items
             </li>
         </ul>
-        <div v-else>There is no notes</div>
     </div>
 </div>
 

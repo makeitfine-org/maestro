@@ -1,60 +1,41 @@
 const app = {
-    data() {
-        return {
-            noteTitle: 'Notes list',
-            notePlaceholder: 'Input note',
-            noteInputValue: '',
-            notes: ['note1', 'note2', 'note3'],
-        }
-    },
+    data: () => ({
+        title: 'Play with Vue.js title',
+        customHtml: '<h1>customHtml</h1>',
+        customObject: {
+            first: 125,
+            second: 'This is second prop',
+            third: -32.33
+        },
+        items: [1, 2, 3, 4, 5, 6, 7]
+    }),
     methods: {
-        inputChangeHandler(event) {
-            this.noteInputValue = event.target.value
+        stopPropagation(event) {
+            event.stopPropagation()
         },
-        addNewNote() {
-            if (this.noteInputValue === '')
-                return
-            this.notes.push(this.noteInputValue)
-            this.noteInputValue = ''
+        addItem(event) {
+            // console.log(this.$refs.newInput.value)
+            let newInput = this.$refs.newInput.value
+            const k = event.key
+            this.items.unshift(
+                k === 'ArrowUp'
+                    ? newInput.toUpperCase()
+                    : (k === 'ArrowDown'
+                        ? newInput.toLowerCase()
+                        : newInput)
+            )
+            console.log(event.key)
         },
-        inputKeyPress(event) {
-            if (event.key === 'Enter') {
-                this.addNewNote()
-            }
+        remove(i) {
+            this.items.splice(i, 1)
         },
-        removeNote(idx) {
-            this.notes.splice(idx, 1)
-        },
-        toUpperCase(str) {
-            return str.toUpperCase()
-        },
-        doubleNumber() {
-            return this.notes.length * 2
-        },
-        titleH1TextDecoration() {
-            if (this.noteInputValue.length < 15) {
-                return 'none'
-            }
-            console.log(">>>")
-            return 'underline'
-        },
-        titleH1Style() {
-            return {
-                color: this.noteInputValue.length < 15 ? 'green' : 'red',
-                fontWeight: this.noteInputValue.length < 15 ? 'normal' : 'bold',
-                textDecoration: this.titleH1TextDecoration()
-            }
+        removeLog(item) {
+            console.log('item:', item)
         }
     },
     computed: {
-        doubleNumberComputed() {
-            return this.notes.length * 2
-        }
-    },
-    watch: {
-        noteInputValue(value) {
-            if (value.includes('qwerty'))
-                this.noteInputValue = ''
+        evenItems() {
+            return this.items.filter(e => e % 2 === 0)
         }
     }
 }

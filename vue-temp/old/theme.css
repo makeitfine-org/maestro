@@ -94,10 +94,10 @@ h3 {
 
 .btn:disabled {
     cursor: not-allowed;
-    opacity: 1!important;
-    background: #eee!important;
-    border-color: #ddd!important;
-    color: #999!important;
+    opacity: 1 !important;
+    background: #eee !important;
+    border-color: #ddd !important;
+    color: #999 !important;
 }
 
 .btn:active {
@@ -294,9 +294,6 @@ h3 {
 }
 
 
-
-
-
 .loader {
     font-size: 10px;
     margin: 50px auto;
@@ -317,6 +314,7 @@ h3 {
     -ms-transform: translateZ(0);
     transform: translateZ(0);
 }
+
 .loader:before {
     width: 50%;
     height: 50%;
@@ -327,6 +325,7 @@ h3 {
     left: 0;
     content: '';
 }
+
 .loader:after {
     background: #2c3e50;
     width: 75%;
@@ -340,6 +339,7 @@ h3 {
     bottom: 0;
     right: 0;
 }
+
 @-webkit-keyframes load3 {
     0% {
         -webkit-transform: rotate(0deg);
@@ -350,6 +350,7 @@ h3 {
         transform: rotate(360deg);
     }
 }
+
 @keyframes load3 {
     0% {
         -webkit-transform: rotate(0deg);
@@ -395,40 +396,12 @@ h3 {
     border-bottom: 2px solid #3eaf7c;
 }
 
-/*[v-cloak] {*/
-/*    display: none;*/
-/*}*/
-
-[v-cloak] {
-    display: block;
-    padding: 50px 0;
+.li-div-norm {
+    display: flex;
+    margin: 10px;
 }
 
-@keyframes spinner {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-[v-cloak]:before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    border-top-color: #333;
-    animation: spinner 0.6s linear infinite;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-[v-cloak]>* {
-    display: none;
+.li-div-norm > div:nth-child(2) {
+    margin-left: 71%;
+    position: fixed;
 }
