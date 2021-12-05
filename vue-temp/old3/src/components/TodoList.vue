@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TodoItem from "@/components/TodoItem"
+import TodoItem from "./TodoItem"
 
 export default {
   props: ['todos'],

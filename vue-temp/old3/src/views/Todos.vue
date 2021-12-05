@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import TodoList from '@/components/TodoList'
-import AddTodo from "@/components/AddTodo"
-import Loading from "@/components/Loading"
+import TodoList from '../components/TodoList'
+import AddTodo from "../components/AddTodo"
+import Loading from "../components/Loading"
 
 export default {
   name: 'app',

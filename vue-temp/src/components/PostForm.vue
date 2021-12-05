@@ -1,0 +1,45 @@
+<template>
+  <form @submit.prevent="onsubmit">
+    <input type="text" placeholder="title" v-model="title">
+    <input type="text" placeholder="body" v-model="body">
+    <button type="submit">Create Post</button>
+  </form>
+</template>
+
+<script>
+import {mapMutations} from 'vuex'
+
+export default {
+  data() {
+    return {
+      title: '',
+      body: ''
+    }
+  },
+  methods: {
+    ...mapMutations(['createPost']),
+    onsubmit() {
+      if (!this.title || !this.body) {
+        return
+      }
+      this.createPost({
+        id: Date.now(),
+        title: this.title,
+        body: this.body
+      })
+      this.title = this.body = ''
+    }
+  }
+}
+</script>
+
+<style scoped>
+input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+</style>

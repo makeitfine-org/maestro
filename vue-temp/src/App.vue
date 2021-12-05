@@ -1,10 +1,30 @@
 <template>
   <div id="app">
-    <h1>Todo app (play with Vue.js)</h1>
+    <PostForm/>
     <hr>
-    <router-view></router-view>
+    <h2>Post count: {{ postsCount }}</h2>
+    <div class="post" v-for="post in validPosts" :key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
   </div>
 </template>
+
+<script>
+import {mapActions, mapGetters} from 'vuex'
+import PostForm from "@/components/PostForm"
+
+export default {
+  name: 'app',
+  components: {PostForm},
+  computed: mapGetters(['validPosts', 'allPosts', 'postsCount']),
+  methods: mapActions(['fetchPosts']),
+  async mounted() {
+    // this.$store.dispatch('fetchPosts')
+    this.fetchPosts()
+  }
+}
+</script>
 
 <style>
 #app {
@@ -13,44 +33,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px auto;
+  width: 400px;
 }
 
-/*[v-cloak] {*/
-/*    display: none;*/
-/*}*/
-
-[v-cloak] {
-  display: block;
-  padding: 50px 0;
-}
-
-@keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-[v-cloak]:before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  margin-left: -10px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  border-top-color: #333;
-  animation: spinner 0.6s linear infinite;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-[v-cloak]>* {
-  display: none;
+.post {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 </style>
