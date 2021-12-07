@@ -15,7 +15,7 @@ app.set('views', path.resolve(__dirname, 'templates'))
 console.log(app.get('view engine'))
 console.log(app.get('views'))
 
-// app.use(express.static('public'))
+app.use(express.static('public'))
 app.use(reqTime)
 app.use(log)
 app.use(serverRouter)
