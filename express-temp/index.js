@@ -16,6 +16,8 @@ console.log(app.get('view engine'))
 console.log(app.get('views'))
 
 app.use(express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 app.use(reqTime)
 app.use(log)
 app.use(serverRouter)
