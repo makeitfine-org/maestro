@@ -51,7 +51,7 @@ app.get(addHtmlExt('/download'), (req, res) => {
     res.download(path.resolve(__dirname, 'public', 'data.txt'))
 })
 
-const port = process.env.PORT ?? '3000'
+const port = process.env.PORT || 80
 app.listen(port, () => {
     console.log(
         color.rgb(255, 32, 0)
