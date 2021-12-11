@@ -47,6 +47,10 @@ app.get('/other', (req, res) => {
     res.render('other', {title: 'Other page', active: 'other'})
 })
 
+app.get('/location', (req, res) => {
+    res.render('location', {title: 'Location', active: 'location'})
+})
+
 app.get(addHtmlExt('/download'), (req, res) => {
     res.download(path.resolve(__dirname, 'public', 'data.txt'))
 })
