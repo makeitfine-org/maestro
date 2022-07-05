@@ -4,6 +4,7 @@
   "description": "Play with Node JS (learning)",
   "main": "index.js",
   "scripts": {
+    "email": "node email.js",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,7 +21,8 @@
   "author": "kores",
   "license": "ISC",
   "dependencies": {
-    "chalk": "4.1.2"
+    "chalk": "4.1.2",
+    "nodemailer": "^6.7.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

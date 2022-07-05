@@ -42,6 +42,10 @@ dependencies {
 
     //    todo: to be deleted
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-mail")
+//    implementation("com.sun.mail:javax.mail:1.5.5")
+//    implementation("com.sun.mail:javax.mail:1.6.2")
+//
     //    todo: to be deleted
     runtimeOnly("com.h2database:h2")
 

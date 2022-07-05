@@ -1,0 +1,23 @@
+spring:
+  mail:
+    host: smtp.i.ua
+    port: 465
+    username: jsendmsg@i.ua
+    password: _MailtrapJsendermail899
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+    test-connection: true
